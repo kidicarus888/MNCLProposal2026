@@ -6,135 +6,73 @@
     <title>MNC Life Assurance x Loop Health Proposal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-/* 1. THE SETUP */
+/* 1. GLOBAL SETUP */
 * { box-sizing: border-box; }
 
 body {
-  background-color: #f0f4f8;
+  background-color: #f1f5f9;
   display: grid;
-  gap: 20px;
+  gap: 40px;
   grid-template-columns: 1fr;
   margin: 0;
   min-height: 100vh;
-  padding: 20px 0;
+  padding: 40px 0;
   place-items: center;
-  font-family: 'Lato', sans-serif; /* Default font */
-  color: #475569;
+  font-family: 'Lato', sans-serif;
+  color: #334155;
 }
 
 .slide-container {
-  align-items: flex-start; 
-  background-color: #ffffff; 
-  border-radius: 8px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); 
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
-  min-height: 720px; 
-  height: auto; 
-  justify-content: flex-start; 
-  overflow: visible; 
-  padding: 60px;
+  min-height: 720px;
+  height: auto;
+  padding: 80px;
   position: relative;
   width: 1280px;
+  overflow: hidden;
 }
 
-.slide-container::before {
-  content: '';
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 0;
-}
-
-.slide-container>* {
-  position: relative;
-  z-index: 1;
-}
-
-/* LANGUAGE SWITCHER */
-.lang-switcher {
-    position: fixed;
-    top: 20px; right: 20px;
-    background-color: #fff;
-    border: 1px solid #E2E8F0;
-    border-radius: 6px;
-    padding: 5px;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.lang-switcher button {
-    background-color: transparent;
-    border: none;
-    padding: 8px 12px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    color: #94A3B8;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.lang-switcher button.active {
-    background-color: #3B82F6;
-    color: #ffffff;
-}
-
-/* TYPOGRAPHY */
+/* 2. TYPOGRAPHY */
 h1, h2, h3, .slide-title {
-  color: #1E293B; 
+  color: #1e3a8a; /* MNC Navy */
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
   margin: 0;
 }
 
-p, li, .subtitle, td, th {
-  color: #475569; 
-  font-family: 'Lato', sans-serif;
-}
-
-h1 { font-size: 70px; }
+h1 { font-size: 64px; line-height: 1.1; }
 
 .slide-title {
-  font-size: 40px;
-  font-weight: 700;
+  font-size: 42px;
   margin-bottom: 40px;
-  text-align: left;
   width: 100%;
-  border-bottom: 3px solid #fbbf24; /* Gold Accent */
+  border-bottom: 4px solid #d97706; /* Gold Accent */
   padding-bottom: 15px;
 }
 
 h3 { font-size: 24px; margin-bottom: 15px; }
 
-p, li, td, th { font-size: 18px; line-height: 1.5; }
+p, li, td { font-size: 18px; line-height: 1.6; }
 
-.subtitle { font-weight: 400; margin: 20px auto; font-size: 24px; }
+.highlight-text { color: #d97706; font-weight: 700; }
 
+/* 3. LAYOUT UTILITIES */
 .content-area {
-  align-items: center;
   display: flex;
+  flex-direction: column;
   flex-grow: 1;
   justify-content: center;
   width: 100%;
-}
-
-/* LAYOUTS */
-.title-layout {
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-  flex-grow: 1;
-  align-items: center;
 }
 
 .two-column {
-  align-items: flex-start;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
@@ -142,7 +80,6 @@ p, li, td, th { font-size: 18px; line-height: 1.5; }
 }
 
 .three-column {
-  align-items: flex-start;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
@@ -150,99 +87,80 @@ p, li, td, th { font-size: 18px; line-height: 1.5; }
 }
 
 .tile {
-  align-items: flex-start;
-  text-align: left;
   background-color: #F8FAFC;
   border-radius: 12px;
-  border: 1px solid #E2E8F0;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  justify-content: flex-start;
+  border-left: 6px solid #1e3a8a;
   padding: 30px;
   height: 100%;
 }
 
-.tile.centered {
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-}
+.tile.blue-accent { border-left-color: #3B82F6; background-color: #eff6ff; }
+.tile.green-accent { border-left-color: #10B981; background-color: #f0fdf4; }
+.tile.gold-accent { border-left-color: #d97706; background-color: #fffbeb; }
+.tile.red-accent { border-left-color: #ef4444; background-color: #fef2f2; }
 
-.bullet-list { width: 100%; }
-.bullet-list ul { list-style: none; margin: 0; padding: 0; }
+.bullet-list ul { list-style: none; padding: 0; margin: 0; }
 .bullet-list li {
-  font-size: 18px;
-  line-height: 1.5;
-  gap: 15px;
-  margin-bottom: 20px;
-  padding-left: 40px;
   position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
 }
-.bullet-list i {
-  color: #10B981;
-  font-size: 24px;
-  left: 0;
-  margin-top: 5px;
+.bullet-list li i {
   position: absolute;
-  text-align: center;
-  top: 0;
-  width: 25px;
+  left: 0; top: 6px;
+  color: #1e3a8a; /* Default Icon Color */
 }
 
-.full-bg-image {
-  background-position: center;
-  background-size: cover;
-  justify-content: center;
-}
-
-/* Table Layout */
-.table-layout { width: 100%; }
-.table-layout table { border-collapse: collapse; width: 100%; }
-.table-layout th, .table-layout td {
-  border-bottom: 1px solid #E2E8F0;
-  padding: 12px;
-  text-align: left;
-  vertical-align: top;
-  font-size: 15px;
-}
-.table-layout th {
-  background-color: #1E293B;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 700;
-  font-family: 'Poppins', sans-serif;
-}
-.table-layout tr:last-child td { border-bottom: none; }
-.table-layout .fee { font-weight: 700; color: #10B981; }
-
-/* Benefit Cards */
-.benefit-card {
-    background: white;
-    border: 1px solid #e2e8f0;
+/* 4. SPECIFIC COMPONENTS */
+.lang-switcher {
+    position: fixed;
+    top: 20px; right: 20px;
+    background-color: white;
+    padding: 8px;
     border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    height: 100%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
-.benefit-header {
+.lang-switcher button {
+    border: none;
+    background: transparent;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    color: #1e3a8a;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 18px;
+    color: #94a3b8;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.lang-switcher button.active {
+    background-color: #1e3a8a;
+    color: white;
 }
 
-/* BILINGUAL LOGIC */
-[lang="en"], [lang="id"] { display: inline; }
-.slide-title[lang], p[lang], h1[lang], h2[lang], h3[lang], li[lang], th[lang], td[lang], div[lang], span[lang].block {
-    display: block;
+.table-layout table { width: 100%; border-collapse: collapse; }
+.table-layout th {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
 }
-body:not(.show-id) [lang="id"] { display: none; }
-body.show-id [lang="en"] { display: none; }
+.table-layout td {
+    padding: 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+.table-layout tr:last-child td { border-bottom: none; }
+
+/* Background for Title */
+.title-slide {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    text-align: center;
+}
+
+/* Bilingual Logic */
+[lang="en"], [lang="id"] { display: inline; }
+.block { display: block; }
+body:not(.show-id) [lang="id"] { display: none !important; }
+body.show-id [lang="en"] { display: none !important; }
 
     </style>
 </head>
@@ -254,433 +172,374 @@ body.show-id [lang="en"] { display: none; }
     <button id="lang-id">ID</button>
 </div>
 
-<!-- Slide 1: Title_Slide -->
-<div class="slide-container full-bg-image" id="slide1" style="background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://placehold.co/1280x720/a0d9b0/ffffff?text=MNC+Life+x+Loop');">
-    <div class="title-layout">
-        <h1 style="color: #D97706;">MNC Life Assurance</h1>
-        <h1 style="color: #1E293B;">
-            <span lang="en">& Loop Health</span>
-            <span lang="id">& Loop Health</span>
-        </h1>
-        <p class="subtitle" style="color: #1E293B;">
-            <span lang="en" class="block">Diabetes Management & Prevention Program</span>
-            <span lang="id" class="block">Program Manajemen & Pencegahan Penyakit Kronis</span>
-            <span lang="en" class="block" style="font-size: 18px; margin-top: 10px;">Proposal for Strategic Partnership</span>
-            <span lang="id" class="block" style="font-size: 18px; margin-top: 10px;">Proposal Kemitraan Strategis</span>
+<!-- Slide 1: Title -->
+<div class="slide-container title-slide" id="slide1">
+    <div class="content-area" style="align-items: center;">
+        <p style="font-weight: 700; letter-spacing: 3px; color: #64748b; text-transform: uppercase; margin-bottom: 20px;">
+            <span lang="en">Strategic Proposal For</span>
+            <span lang="id">Proposal Strategis Untuk</span>
         </p>
+        <h1>
+            <span style="color: #d97706;">MNC Life Assurance</span>
+        </h1>
+        <h2 style="margin-top: 20px; font-size: 48px; color: #1e3a8a;">
+            Loop Health
+        </h2>
+        <p style="font-size: 28px; margin-top: 30px; color: #334155; font-weight: 400;">
+            <span lang="en">Diabetes Management & Prevention Program</span>
+            <span lang="id">Program Manajemen & Pencegahan Diabetes</span>
+        </p>
+        
+        <div class="three-column" style="margin-top: 60px; gap: 60px; justify-content: center; width: 80%;">
+            <div style="text-align: center;">
+                <i class="fa-solid fa-file-invoice-dollar" style="font-size: 40px; color: #1e3a8a; margin-bottom: 15px;"></i>
+                <p style="font-weight: 700;">Reduce Claims</p>
+            </div>
+            <div style="text-align: center;">
+                <i class="fa-solid fa-chart-line" style="font-size: 40px; color: #d97706; margin-bottom: 15px;"></i>
+                <p style="font-weight: 700;">Delay Progression</p>
+            </div>
+            <div style="text-align: center;">
+                <i class="fa-solid fa-scale-balanced" style="font-size: 40px; color: #10B981; margin-bottom: 15px;"></i>
+                <p style="font-weight: 700;">Stabilize Costs</p>
+            </div>
+        </div>
     </div>
 </div>
 
-<!-- Slide 2: Executive Summary -->
+<!-- Slide 2: Executive Summary - Market Pain Points -->
 <div class="slide-container" id="slide2">
     <h2 class="slide-title">
-        <span lang="en">I. Executive Summary: Strategic Objectives</span>
-        <span lang="id">I. Ringkasan Eksekutif: Tujuan Strategis</span>
-    </h2>
-    <div class="content-area" style="align-items: flex-start;">
-        <div style="width: 100%;">
-            <p>
-                <span lang="en">Loop Health is a digital health platform focusing on the <strong>prevention and management of chronic diseases</strong> (primarily diabetes and metabolic conditions). We partner with insurers like MNC Life Assurance to deliver scalable solutions designed to achieve three core strategic objectives:</span>
-                <span lang="id">Loop Health adalah platform kesehatan digital yang berfokus pada <strong>pencegahan dan pengelolaan penyakit kronis</strong> (terutama diabetes dan kondisi metabolik). Kami bekerja sama dengan perusahaan asuransi seperti MNC Life Assurance untuk menghadirkan solusi berskala besar yang dirancang untuk mencapai tiga tujuan strategis utama:</span>
-            </p>
-            
-            <div class="three-column" style="margin-top: 40px; gap: 20px;">
-                <div class="tile" style="background-color: #fff7ed; border-color: #D97706;"> <!-- Gold/Orange for MNC -->
-                    <h3 style="color: #D97706;">
-                        <span lang="en">Reduce Costs</span>
-                        <span lang="id">Kurangi Biaya</span>
-                    </h3>
-                    <p>
-                        <span lang="en">Reduce long-term medical costs and claims severity.</span>
-                        <span lang="id">Menurunkan biaya medis jangka panjang dan tingkat keparahan klaim.</span>
-                    </p>
-                </div>
-                <div class="tile" style="background-color: #f0fdf4; border-color: #10B981;">
-                    <h3 style="color: #10B981;">
-                        <span lang="en">Improve Outcomes</span>
-                        <span lang="id">Tingkatkan Kesehatan</span>
-                    </h3>
-                    <p>
-                        <span lang="en">Improve health outcomes at a population scale.</span>
-                        <span lang="id">Meningkatkan hasil kesehatan secara populasi.</span>
-                    </p>
-                </div>
-                <div class="tile" style="background-color: #eff6ff; border-color: #3B82F6;">
-                    <h3 style="color: #3B82F6;">
-                        <span lang="en">Increase Productivity</span>
-                        <span lang="id">Tingkatkan Produktivitas</span>
-                    </h3>
-                    <p>
-                        <span lang="en">Increase productivity and wellbeing across insured members or employee groups.</span>
-                        <span lang="id">Meningkatkan produktivitas dan kesejahteraan anggota yang diasuransikan atau kelompok karyawan.</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 3: Why Employee Health Matters -->
-<div class="slide-container" id="slide3">
-    <h2 class="slide-title">
-        <span lang="en">The Challenge: Why This Matters</span>
-        <span lang="id">Tantangan: Mengapa Ini Penting</span>
+        <span lang="en">I. Executive Summary: Market Pain Points</span>
+        <span lang="id">I. Ringkasan Eksekutif: Titik Nyeri Pasar</span>
     </h2>
     <div class="content-area">
-        <div class="two-column">
-            <div>
-                <h3>
-                    <span lang="en">A Growing Epidemic</span>
-                    <span lang="id">Epidemi yang Berkembang</span>
-                </h3>
-                <ul class="bullet-list" style="max-width: 100%;">
-                    <li><i class="fa-solid fa-triangle-exclamation"></i><strong><span lang="en">1 in 5</span><span lang="id">1 dari 5</span></strong> <span lang="en">Indonesian adults has prediabetes.</span><span lang="id">orang dewasa Indonesia menderita pradiabetes.</span></li>
-                    <li><i class="fa-solid fa-magnifying-glass-chart"></i><strong><span lang="en">3 out of 4</span><span lang="id">3 dari 4</span></strong> <span lang="en">people with diabetes are undiagnosed.</span><span lang="id">penderita diabetes tidak terdiagnosis.</span></li>
-                    <li><i class="fa-solid fa-arrow-trend-up"></i><strong><span lang="en">Rising Claims:</span><span lang="id">Klaim Meningkat:</span></strong> <span lang="en">Healthcare costs are rising at 13.6% annually in Indonesia.</span><span lang="id">Biaya kesehatan meningkat 13,6% per tahun di Indonesia.</span></li>
-                </ul>
-
-                <h3 style="margin-top: 30px;">
-                    <span lang="en">Evidence-Based Impact</span>
-                    <span lang="id">Dampak Berbasis Bukti</span>
-                </h3>
-                <ul class="bullet-list" style="max-width: 100%;">
-                    <li><i class="fa-solid fa-shield-heart"></i><strong><span lang="en">HbA1c Reduction:</span><span lang="id">Penurunan HbA1c:</span></strong> <span lang="en">Every 1% drop in HbA1c reduces complication risk by 21-37%.</span><span lang="id">Setiap penurunan 1% HbA1c mengurangi risiko komplikasi sebesar 21-37%.</span></li>
-                    <li><i class="fa-solid fa-person-running"></i><strong><span lang="en">Weight Loss:</span><span lang="id">Penurunan Berat Badan:</span></strong> <span lang="en">5-7% weight loss can reduce diabetes risk by 58%.</span><span lang="id">Penurunan berat badan 5-7% dapat mengurangi risiko diabetes sebesar 58%.</span></li>
-                </ul>
+        <div class="three-column" style="gap: 30px;">
+            
+            <!-- Inflation -->
+            <div class="tile red-accent">
+                <i class="fa-solid fa-arrow-trend-up" style="font-size: 32px; color: #ef4444; margin-bottom: 20px;"></i>
+                <h3><span lang="en">Medical Inflation</span><span lang="id">Inflasi Medis</span></h3>
+                <p style="font-size: 36px; font-weight: 700; color: #ef4444; margin: 10px 0;">13.0% – 17.9%</p>
+                <p style="font-size: 14px; margin-bottom: 10px;">
+                    <span lang="en">Projected 2024 Rate (MMB/WTW)</span>
+                    <span lang="id">Proyeksi 2024 (MMB/WTW)</span>
+                </p>
+                <p style="font-size: 16px;">
+                    <span lang="en">Premium adjustments are unavoidable unless disease severity is controlled.</span>
+                    <span lang="id">Penyesuaian premi tidak terhindarkan tanpa pengendalian keparahan penyakit.</span>
+                </p>
             </div>
-            <div class="tile centered" style="background-color: #F8FAFC; justify-content: center;">
-                 <img src="https://placehold.co/400x300/e2e8f0/1e293b?text=Health+Risk+Chart" alt="Risk Chart" style="width: 100%; border-radius: 8px;">
-                 <p style="margin-top: 15px; font-size: 14px;">
-                    <span lang="en">Managing chronic disease is key to stabilizing long-term loss ratios.</span>
-                    <span lang="id">Mengelola penyakit kronis adalah kunci untuk menstabilkan rasio kerugian jangka panjang.</span>
-                 </p>
+
+            <!-- Claims -->
+            <div class="tile red-accent">
+                <i class="fa-solid fa-file-medical-alt" style="font-size: 32px; color: #ef4444; margin-bottom: 20px;"></i>
+                <h3><span lang="en">Group Claims</span><span lang="id">Klaim Grup</span></h3>
+                <p style="font-size: 36px; font-weight: 700; color: #ef4444; margin: 10px 0;">+20.3%</p>
+                <p style="font-size: 14px; margin-bottom: 10px;">
+                    <span lang="en">Increase YoY (H1 2024, AAJI)</span>
+                    <span lang="id">Kenaikan YoY (H1 2024, AAJI)</span>
+                </p>
+                <p style="font-size: 16px;">
+                    <span lang="en">Disease management is essential for portfolio sustainability.</span>
+                    <span lang="id">Manajemen penyakit sangat penting untuk keberlanjutan portofolio.</span>
+                </p>
+            </div>
+
+            <!-- Diabetes Cost -->
+            <div class="tile red-accent">
+                <i class="fa-solid fa-syringe" style="font-size: 32px; color: #ef4444; margin-bottom: 20px;"></i>
+                <h3><span lang="en">Diabetes Impact</span><span lang="id">Dampak Diabetes</span></h3>
+                <p style="font-size: 36px; font-weight: 700; color: #ef4444; margin: 10px 0;">20×</p>
+                <p style="font-size: 14px; margin-bottom: 10px;">
+                    <span lang="en">Cost Multiplier for Complications</span>
+                    <span lang="id">Multiplier Biaya Komplikasi</span>
+                </p>
+                <p style="font-size: 16px;">
+                    <span lang="en">Treatment with complications is 20x higher vs uncomplicated.</span>
+                    <span lang="id">Biaya perawatan dengan komplikasi 20x lebih tinggi vs tanpa komplikasi.</span>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Slide 3: Why Loop Health Matters -->
+<div class="slide-container" id="slide3">
+    <h2 class="slide-title">
+        <span lang="en">Why Loop Health Matters Now</span>
+        <span lang="id">Mengapa Loop Health Penting Saat Ini</span>
+    </h2>
+    <div class="content-area">
+        <div class="two-column" style="align-items: center;">
+            <div>
+                <p style="margin-bottom: 30px; font-size: 20px;">
+                    <span lang="en">Loop Health’s programs directly target cost drivers by slowing or reversing metabolic deterioration.</span>
+                    <span lang="id">Program Loop Health secara langsung menargetkan pemicu biaya dengan memperlambat atau membalikkan kerusakan metabolik.</span>
+                </p>
+                <div class="tile blue-accent">
+                    <h3 style="color: #1e3a8a;"><span lang="en">Core Mechanisms</span><span lang="id">Mekanisme Inti</span></h3>
+                    <div class="bullet-list">
+                        <ul>
+                            <li><i class="fa-solid fa-check-circle"></i><span lang="en">Reducing HbA1c and blood-glucose volatility.</span><span lang="id">Menurunkan HbA1c dan fluktuasi gula darah.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span lang="en">Lowering the risk of catastrophic complications.</span><span lang="id">Mengurangi risiko kejadian katastrofik.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span lang="en">Preventing progression from prediabetes to diabetes.</span><span lang="id">Mencegah transisi dari pradiabetes ke diabetes.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span lang="en">Reducing inpatient admissions related to uncontrolled disease.</span><span lang="id">Menekan angka rawat inap akibat penyakit tidak terkelola.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tile gold-accent" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                <i class="fa-solid fa-scale-balanced" style="font-size: 60px; color: #d97706; margin-bottom: 20px;"></i>
+                <h3 style="color: #d97706;">
+                    <span lang="en">Strategic Goal</span>
+                    <span lang="id">Tujuan Strategis</span>
+                </h3>
+                <p style="font-size: 20px;">
+                    <span lang="en">"The primary goal in reducing cost is not reducing outpatient visits, but actively preventing the progression to complications."</span>
+                    <span lang="id">"Tujuan utama pengurangan biaya bukan mengurangi kunjungan rawat jalan, tetapi mencegah progresi ke komplikasi secara aktif."</span>
+                </p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Slide 4: Program Overview -->
+<!-- Slide 4: Program Overview Table -->
 <div class="slide-container" id="slide4">
     <h2 class="slide-title">
         <span lang="en">II. Program Overview</span>
         <span lang="id">II. Gambaran Program</span>
     </h2>
-    <div class="content-area" style="align-items: flex-start;">
-        <div style="width: 100%;">
-            <p>
-                <span lang="en">Loop Health offers two core, highly-engaged programs for MNC Life’s insured populations, aimed at stabilizing claims trends and improving population health:</span>
-                <span lang="id">Loop Health menyediakan dua program inti dengan tingkat keterlibatan tinggi untuk populasi yang diasuransikan oleh MNC Life, dengan tujuan menstabilkan tren klaim dan meningkatkan kesehatan populasi:</span>
-            </p>
-            <div class="two-column" style="margin-top: 30px; gap: 40px;">
-                <div class="tile" style="background-color: #f0f9ff; border-color: #3B82F6; padding: 40px;">
-                    <h3 style="color: #3B82F6;">
-                        <span lang="en">Diabetes Management Program (DMP)</span>
-                        <span lang="id">Program Manajemen Diabetes (DMP)</span>
-                    </h3>
-                    <div class="bullet-list">
-                        <ul>
-                            <li><i class="fa-solid fa-bullseye"></i><strong><span lang="en">Target:</span><span lang="id">Target:</span></strong> <span lang="en">Members already diagnosed with diabetes.</span><span lang="id">Anggota yang telah terdiagnosis diabetes.</span></li>
-                            <li><i class="fa-solid fa-kit-medical"></i><strong><span lang="en">Objective:</span><span lang="id">Tujuan:</span></strong> <span lang="en">Continuous support to maintain stable blood glucose and prevent complications.</span><span lang="id">Dukungan berkelanjutan untuk menjaga gula darah stabil dan mencegah komplikasi.</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="tile" style="background-color: #f0fdf4; border-color: #10B981; padding: 40px;">
-                    <h3 style="color: #10B981;">
-                        <span lang="en">Digital Prevention Program (DPP)</span>
-                        <span lang="id">Program Pencegahan Digital (DPP)</span>
-                    </h3>
-                    <div class="bullet-list">
-                        <ul>
-                            <li><i class="fa-solid fa-bullseye"></i><strong><span lang="en">Target:</span><span lang="id">Target:</span></strong> <span lang="en">Members at high metabolic risk (e.g., prediabetes, obesity, BMI > 27).</span><span lang="id">Anggota dengan risiko metabolik tinggi (misalnya pradiabetes, obesitas, BMI > 27).</span></li>
-                            <li><i class="fa-solid fa-shield-heart"></i><strong><span lang="en">Objective:</span><span lang="id">Tujuan:</span></strong> <span lang="en">Early intervention to adopt healthier habits and prevent the progression to chronic disease.</span><span lang="id">Intervensi dini untuk membantu perubahan gaya hidup dan mencegah progresi penyakit kronis.</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <div class="content-area">
+        <p style="margin-bottom: 30px;">
+            <span lang="en">Evidence from international and BPJS-backed studies suggests structured diabetes-management programs can reduce cost ratios by ≈ 15%–17%.</span>
+            <span lang="id">Berdasarkan studi internasional dan analisis BPJS, program manajemen diabetes terstruktur terbukti dapat menurunkan rasio biaya sebesar ≈ 15%–17%.</span>
+        </p>
+
+        <div class="table-layout">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 20%;"><span lang="en">Program</span><span lang="id">Program</span></th>
+                        <th style="width: 30%;"><span lang="en">Target Population</span><span lang="id">Target Peserta</span></th>
+                        <th style="width: 50%;"><span lang="en">Objective</span><span lang="id">Tujuan</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background-color: #eff6ff;">
+                        <td>
+                            <strong><span lang="en">Diabetes Management (DMP)</span><span lang="id">Manajemen Diabetes (DMP)</span></strong>
+                        </td>
+                        <td>
+                            <span lang="en">Diagnosed diabetes patients.</span>
+                            <span lang="id">Peserta dengan diagnosis diabetes.</span>
+                        </td>
+                        <td>
+                            <span lang="en">Improve glycemic control, reduce complications, stabilize long-term claim cost.</span>
+                            <span lang="id">Meningkatkan kontrol glukosa, menurunkan komplikasi, menstabilkan biaya jangka panjang.</span>
+                        </td>
+                    </tr>
+                    <tr style="background-color: #f0fdf4;">
+                        <td>
+                            <strong><span lang="en">Digital Prevention (DPP)</span><span lang="id">Pencegahan Digital (DPP)</span></strong>
+                        </td>
+                        <td>
+                            <span lang="en">High-risk individuals (prediabetes, obesity, BMI > 27).</span>
+                            <span lang="id">Kelompok berisiko tinggi (pradiabetes, obesitas, BMI > 27).</span>
+                        </td>
+                        <td>
+                            <span lang="en">Prevent disease progression & reduce future claim severity.</span>
+                            <span lang="id">Mencegah progresi penyakit & menurunkan biaya klaim masa depan.</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
 
-<!-- Slide 5: DMP Detail -->
+<!-- Slide 5: DMP Details -->
 <div class="slide-container" id="slide5">
     <h2 class="slide-title">
         <span lang="en">III. Diabetes Management Program (DMP)</span>
         <span lang="id">III. Program Manajemen Diabetes (DMP)</span>
     </h2>
     <div class="content-area">
-        <div class="two-column" style="align-items: flex-start;">
-            <div>
-                <h3>
-                    <span lang="en">Program Components</span>
-                    <span lang="id">Komponen Program</span>
-                </h3>
-                <p>
-                    <span lang="en">The DMP provides continuous lifestyle and behavioral management, which is key to controlling a chronic condition with high and escalating costs.</span>
-                    <span lang="id">DMP menyediakan manajemen gaya hidup dan perilaku secara berkelanjutan—pendekatan kunci dalam mengendalikan kondisi kronis dengan biaya tinggi.</span>
-                </p>
-                <div class="bullet-list" style="margin-top: 20px;">
-                    <ul>
-                        <li><i class="fa-solid fa-laptop-medical"></i><strong><span lang="en">Monitoring & Tools:</span><span lang="id">Monitoring & Tools:</span></strong> <span lang="en">Daily blood glucose monitoring, Loop Health Kit (glucometer + unlimited strips and lancets).</span><span lang="id">Pemantauan gula darah harian, Loop Health Kit (glucometer + strip dan lanset tanpa batas).</span></li>
-                        <li><i class="fa-solid fa-user-doctor"></i><strong><span lang="en">Coaching:</span><span lang="id">Coaching:</span></strong> <span lang="en">Unlimited chat access to Loop Health Coaches (07.00–22.00), Monthly video consultations.</span><span lang="id">Akses chat tanpa batas ke Loop Health Coach (07.00–22.00), Konsultasi video bulanan.</span></li>
-                        <li><i class="fa-solid fa-book-medical"></i><strong><span lang="en">Support:</span><span lang="id">Support:</span></strong> <span lang="en">Personalized insights, structured education, habit-building content, and regular progress reports.</span><span lang="id">Insight personal, edukasi terstruktur, konten pembentukan kebiasaan, dan laporan perkembangan rutin.</span></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="tile centered" style="background-color: #f0f9ff; border-color: #3B82F6;">
-                <img src="https://placehold.co/400x300/3B82F6/FFFFFF?text=DMP+Kit" alt="DMP Kit" style="width: 100%; border-radius: 8px; margin-bottom: 20px;">
-                <h3 style="color: #3B82F6;">
-                    <span lang="en">Clinical Focus</span>
-                    <span lang="id">Fokus Klinis</span>
-                </h3>
-                <p>
-                    <span lang="en">Focuses on glucose control, medication adherence, and complication prevention.</span>
-                    <span lang="id">Berfokus pada kontrol glukosa, kepatuhan obat, dan pencegahan komplikasi.</span>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 5b: DMP Benefits -->
-<div class="slide-container" id="slide5b">
-    <h2 class="slide-title">
-        <span lang="en">DMP: Key Benefits</span>
-        <span lang="id">DMP: Manfaat Utama</span>
-    </h2>
-    <div class="content-area">
         <div class="three-column">
-            <div class="benefit-card" style="border-top: 4px solid #D97706;">
-                <div class="benefit-header" style="color: #D97706;"><i class="fa-solid fa-building-shield"></i> <span lang="en">MNC Life Assurance</span><span lang="id">MNC Life Assurance</span></div>
-                <ul class="bullet-list">
-                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Lower long-term diabetes-related claims.</span><span lang="id">Penurunan klaim terkait diabetes jangka panjang.</span></li>
-                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Reduced risk of catastrophic events.</span><span lang="id">Penurunan risiko kejadian katastrofik.</span></li>
-                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Improved loss ratios and renewal stability.</span><span lang="id">Rasio kerugian lebih stabil dan lebih sehat.</span></li>
-                </ul>
-            </div>
-            <div class="benefit-card" style="border-top: 4px solid #334155;">
-                <div class="benefit-header" style="color: #334155;"><i class="fa-solid fa-briefcase"></i> <span lang="en">Corporate Client</span><span lang="id">Perusahaan Klien</span></div>
-                <ul class="bullet-list">
-                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Improved employee productivity and attendance.</span><span lang="id">Produktivitas dan kehadiran karyawan meningkat.</span></li>
-                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Lower burden of uncontrolled diabetes.</span><span lang="id">Beban karyawan dengan diabetes tidak terkontrol berkurang.</span></li>
-                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Clear health dashboards and outcome reporting.</span><span lang="id">Dashboard kesehatan dan laporan outcome yang jelas.</span></li>
-                </ul>
-            </div>
-            <div class="benefit-card" style="border-top: 4px solid #3B82F6;">
-                <div class="benefit-header" style="color: #3B82F6;"><i class="fa-solid fa-user"></i> <span lang="en">The Member</span><span lang="id">Peserta</span></div>
-                 <ul class="bullet-list">
-                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Better glycemic control and fewer symptom fluctuations.</span><span lang="id">Kontrol gula darah lebih baik dan gejala lebih stabil.</span></li>
-                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Daily guidance, easy monitoring, and coaching.</span><span lang="id">Panduan harian, monitoring mudah, dan coaching personal.</span></li>
-                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Reduced anxiety and better understanding.</span><span lang="id">Kecemasan berkurang, pemahaman kondisi lebih baik.</span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 6: DMP Curriculum -->
-<div class="slide-container" id="slide6">
-    <h2 class="slide-title">
-        <span lang="en">DMP: Structured Education</span>
-        <span lang="id">DMP: Edukasi Terstruktur</span>
-    </h2>
-    <div class="content-area">
-        <div class="two-column" style="gap: 30px;">
-            <div class="tile">
-                <h3><span lang="en">Foundations</span><span lang="id">Dasar-dasar</span></h3>
-                <div class="bullet-list">
-                    <ul>
-                        <li><span lang="en">Understanding Diabetes & Insulin</span><span lang="id">Memahami Diabetes & Insulin</span></li>
-                        <li><span lang="en">Glucose Testing Patterns (GDP, GD2PP)</span><span lang="id">Pola Tes Glukosa (GDP, GD2PP)</span></li>
-                        <li><span lang="en">Complications (Kidney, Eyes, Heart, Foot)</span><span lang="id">Komplikasi (Ginjal, Mata, Jantung, Kaki)</span></li>
-                        <li><span lang="en">Medication Guidance & Safety</span><span lang="id">Panduan & Keamanan Obat</span></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="tile">
-                <h3><span lang="en">Nutrition & Lifestyle</span><span lang="id">Nutrisi & Gaya Hidup</span></h3>
-                <div class="bullet-list">
-                    <ul>
-                        <li><span lang="en">Plate Model (Piring T/Y) & 3J Principles</span><span lang="id">Model Piring (Piring T/Y) & Prinsip 3J</span></li>
-                        <li><span lang="en">Carbohydrates, GI, & Low-Glycemic Meals</span><span lang="id">Karbohidrat, GI, & Makanan Rendah Glikemik</span></li>
-                        <li><span lang="en">Exercise Guidelines for Diabetes</span><span lang="id">Panduan Olahraga untuk Diabetes</span></li>
-                        <li><span lang="en">Ramadan / Fasting Management</span><span lang="id">Manajemen Ramadan / Puasa</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 7: DPP Detail -->
-<div class="slide-container" id="slide7">
-    <h2 class="slide-title">
-        <span lang="en">IV. Digital Prevention Program (DPP)</span>
-        <span lang="id">IV. Program Pencegahan Digital (DPP)</span>
-    </h2>
-    <div class="content-area">
-        <div class="two-column" style="align-items: flex-start;">
-             <div class="tile centered" style="background-color: #f0fdf4; border-color: #10B981;">
-                <img src="https://placehold.co/400x300/10B981/FFFFFF?text=DPP+Kit" alt="DPP Kit" style="width: 100%; border-radius: 8px; margin-bottom: 20px;">
-                <h3 style="color: #10B981;">
-                    <span lang="en">Lifestyle Focus</span>
-                    <span lang="id">Fokus Gaya Hidup</span>
-                </h3>
+            <div class="tile blue-accent">
+                <i class="fa-solid fa-laptop-medical" style="font-size: 32px; color: #3B82F6; margin-bottom: 15px;"></i>
+                <h3 style="color: #3B82F6;"><span lang="en">Monitoring & Tools</span><span lang="id">Monitoring & Alat</span></h3>
                 <p>
-                    <span lang="en">Focuses on early intervention for metabolic risk, preventing future high-cost chronic conditions.</span>
-                    <span lang="id">Berfokus pada intervensi dini untuk risiko metabolik, mencegah munculnya kondisi kronis berbiaya tinggi.</span>
+                    <span lang="en">Daily blood glucose logging; Loop Kit (glucometer + unlimited strips & lancets).</span>
+                    <span lang="id">Pemantauan gula darah harian; Loop Kit (glucometer + strip & lanset tanpa batas).</span>
                 </p>
             </div>
-            <div>
-                <h3>
-                    <span lang="en">Program Components</span>
-                    <span lang="id">Komponen Program</span>
-                </h3>
-                <div class="bullet-list" style="margin-top: 20px;">
-                    <ul>
-                        <li><i class="fa-solid fa-scale-balanced"></i><strong><span lang="en">Monitoring & Tools:</span><span lang="id">Monitoring & Tools:</span></strong> <span lang="en">Daily weight and waist-circumference tracking, Loop Health Kit (digital scale + tape measure).</span><span lang="id">Tracking berat badan dan lingkar pinggang harian, Loop Health Kit (timbangan digital + pita ukur).</span></li>
-                        <li><i class="fa-solid fa-comments"></i><strong><span lang="en">Coaching:</span><span lang="id">Coaching:</span></strong> <span lang="en">Unlimited chat access to coaches, Monthly video consultations.</span><span lang="id">Akses chat tanpa batas ke coach, Konsultasi video bulanan.</span></li>
-                        <li><i class="fa-solid fa-carrot"></i><strong><span lang="en">Support:</span><span lang="id">Support:</span></strong> <span lang="en">Personalized habit-building guidance, lifestyle and nutrition content, and regular reporting on weight trends.</span><span lang="id">Panduan pembentukan kebiasaan, konten nutrisi dan gaya hidup, dan pelaporan rutin tren berat badan.</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 7b: DPP Benefits -->
-<div class="slide-container" id="slide7b">
-    <h2 class="slide-title">
-        <span lang="en">DPP: Key Benefits</span>
-        <span lang="id">DPP: Manfaat Utama</span>
-    </h2>
-    <div class="content-area">
-        <div class="three-column">
-            <div class="benefit-card" style="border-top: 4px solid #D97706;">
-                <div class="benefit-header" style="color: #D97706;"><i class="fa-solid fa-building-shield"></i> <span lang="en">MNC Life Assurance</span><span lang="id">MNC Life Assurance</span></div>
-                <ul class="bullet-list">
-                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Prevents progression from prediabetes to diabetes.</span><span lang="id">Mencegah progresi dari pradiabetes ke diabetes.</span></li>
-                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Reduces long-term claims (CVD, obesity).</span><span lang="id">Menurunkan klaim jangka panjang (CVD, obesitas).</span></li>
-                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Strengthens preventive value proposition.</span><span lang="id">Memperkuat value proposition preventif.</span></li>
-                </ul>
-            </div>
-            <div class="benefit-card" style="border-top: 4px solid #334155;">
-                <div class="benefit-header" style="color: #334155;"><i class="fa-solid fa-briefcase"></i> <span lang="en">Corporate Client</span><span lang="id">Perusahaan Klien</span></div>
-                <ul class="bullet-list">
-                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Healthier workforce and reduced risk clustering.</span><span lang="id">Tenaga kerja lebih sehat dengan risiko lebih rendah.</span></li>
-                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Better long-term productivity.</span><span lang="id">Produktivitas jangka panjang yang lebih baik.</span></li>
-                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Clear risk “heat maps”.</span><span lang="id">“Heat map” risiko yang jelas.</span></li>
-                </ul>
-            </div>
-            <div class="benefit-card" style="border-top: 4px solid #10B981;">
-                <div class="benefit-header" style="color: #10B981;"><i class="fa-solid fa-user"></i> <span lang="en">The Member</span><span lang="id">Peserta</span></div>
-                 <ul class="bullet-list">
-                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Step-by-step sustainable weight loss.</span><span lang="id">Penurunan berat badan berkelanjutan bertahap.</span></li>
-                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">More energy and better metabolic awareness.</span><span lang="id">Lebih berenergi dan kesadaran metabolik lebih baik.</span></li>
-                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Early identification of risks.</span><span lang="id">Identifikasi dini risiko.</span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 8: The Loop App -->
-<div class="slide-container" id="slide8">
-    <h2 class="slide-title">
-        <span lang="en">The Loop App: Daily Engagement</span>
-        <span lang="id">Aplikasi Loop: Keterlibatan Harian</span>
-    </h2>
-    <div class="content-area" style="align-items: center; justify-content: center; gap: 15px;">
-        <img src="https://placehold.co/220x450/E2E8F0/1E293B?text=Logging" alt="App Logging Screen" style="border-radius: 12px; height: 400px;">
-        <img src="https://placehold.co/220x450/E2E8F0/1E293B?text=Trends" alt="App Trends Screen" style="border-radius: 12px; height: 400px;">
-        <img src="https://placehold.co/220x450/E2E8F0/1E293B?text=Chat" alt="App Chat Screen" style="border-radius: 12px; height: 400px;">
-        <img src="https://placehold.co/220x450/E2E8F0/1E293B?text=Curriculum" alt="App Curriculum Screen" style="border-radius: 12px; height: 400px;">
-        <img src="https://placehold.co/220x450/E2E8F0/1E293B?text=Reminders" alt="App Reminders Screen" style="border-radius: 12px; height: 400px;">
-    </div>
-    <div class="tiled-content" style="margin-top: 20px; gap: 10px; justify-content: space-around;">
-        <p style="font-size: 16px; text-align: center;"><strong lang="en">Logging</strong><strong lang="id">Mencatat</strong></p>
-        <p style="font-size: 16px; text-align: center;"><strong lang="en">View Trends</strong><strong lang="id">Lihat Tren</strong></p>
-        <p style="font-size: 16px; text-align: center;"><strong lang="en">Coach Chat</strong><strong lang="id">Obrolan Pelatih</strong></p>
-        <p style="font-size: 16px; text-align: center;"><strong lang="en">Curriculum</strong><strong lang="id">Kurikulum</strong></p>
-        <p style="font-size: 16px; text-align: center;"><strong lang="en">Reminders</strong><strong lang="id">Pengingat</strong></p>
-    </div>
-</div>
-
-<!-- Slide 9: Evidence -->
-<div class="slide-container" id="slide9">
-    <h2 class="slide-title">
-        <span lang="en">Proven Impact (Pilot Data)</span>
-        <span lang="id">Dampak Terbukti (Data Pilot)</span>
-    </h2>
-    <div class="content-area">
-        <p style="margin-bottom: 20px;">
-            <span lang="en">Results from our APP Pilot (Jambi & Perawang) demonstrate clear clinical improvements.</span>
-            <span lang="id">Hasil dari Pilot APP (Jambi & Perawang) menunjukkan perbaikan klinis yang jelas.</span>
-        </p>
-        <div class="two-column" style="gap: 30px;">
-            <div class="tile" style="background-color: #f0f9ff; border-color: #3B82F6;">
-                <h3 style="color: #3B82F6;"><span lang="en">DMP Success</span><span lang="id">Keberhasilan DMP</span></h3>
-                <div class="bullet-list">
-                    <ul>
-                        <li><span lang="en">38 of 49 users (78%) improved HbA1c</span><span lang="id">38 dari 49 pengguna (78%) HbA1c membaik</span></li>
-                        <li><span lang="en">1.2% average HbA1c reduction</span><span lang="id">Penurunan HbA1c rata-rata 1.2%</span></li>
-                        <li><span lang="en">High engagement (17 tests/mo)</span><span lang="id">Keterlibatan tinggi (17 tes/bulan)</span></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="tile" style="background-color: #f0fdf4; border-color: #10B981;">
-                <h3 style="color: #10B981;"><span lang="en">DPP Success</span><span lang="id">Keberhasilan DPP</span></h3>
-                <div class="bullet-list">
-                    <ul>
-                        <li><span lang="en">25 of 28 users (89%) lost weight</span><span lang="id">25 dari 28 pengguna (89%) turun berat badan</span></li>
-                        <li><span lang="en">3.3% average weight loss in 2 months</span><span lang="id">Penurunan berat badan rata-rata 3.3% dalam 2 bulan</span></li>
-                        <li><span lang="en">Strong engagement (55 data inputs/mo)</span><span lang="id">Keterlibatan kuat (55 input data/bulan)</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 10: Pricing -->
-<div class="slide-container" id="slide10">
-    <h2 class="slide-title">
-        <span lang="en">V. Commercial Terms & Pricing Structure</span>
-        <span lang="id">V. Ketentuan Komersial & Struktur Harga</span>
-    </h2>
-    <div class="content-area">
-        <!-- Base Rates -->
-        <div class="two-column" style="margin-bottom: 30px;">
-            <div class="tile" style="background-color: #fff; border: 1px solid #e2e8f0; border-left: 5px solid #3B82F6;">
-                <h3><span lang="en">DMP Base Rate</span><span lang="id">Tarif Dasar DMP</span></h3>
-                <p style="font-size: 32px; font-weight: 700; color: #3B82F6;">Rp 200,000 <span style="font-size: 16px; color: #64748b; font-weight: 400;">/ member / month</span></p>
-                <p style="font-size: 14px; margin-top: 10px;">
-                    <span lang="en">For < 500 active participants. Includes Kit & Coaching.</span>
-                    <span lang="id">Untuk < 500 peserta aktif. Termasuk Kit & Coaching.</span>
+            <div class="tile blue-accent">
+                <i class="fa-solid fa-user-doctor" style="font-size: 32px; color: #3B82F6; margin-bottom: 15px;"></i>
+                <h3 style="color: #3B82F6;"><span lang="en">Coaching</span><span lang="id">Coaching</span></h3>
+                <p>
+                    <span lang="en">Unlimited chat access (07.00–22.00); Monthly video consultations.</span>
+                    <span lang="id">Akses chat tanpa batas (07.00–22.00); Konsultasi video bulanan.</span>
                 </p>
             </div>
-            <div class="tile" style="background-color: #fff; border: 1px solid #e2e8f0; border-left: 5px solid #10B981;">
-                <h3><span lang="en">DPP Base Rate</span><span lang="id">Tarif Dasar DPP</span></h3>
-                <p style="font-size: 32px; font-weight: 700; color: #10B981;">Rp 150,000 <span style="font-size: 16px; color: #64748b; font-weight: 400;">/ member / month</span></p>
-                <p style="font-size: 14px; margin-top: 10px;">
-                    <span lang="en">For < 500 active participants. Includes Kit & Coaching.</span>
-                    <span lang="id">Untuk < 500 peserta aktif. Termasuk Kit & Coaching.</span>
+            <div class="tile blue-accent">
+                <i class="fa-solid fa-book-open" style="font-size: 32px; color: #3B82F6; margin-bottom: 15px;"></i>
+                <h3 style="color: #3B82F6;"><span lang="en">Support</span><span lang="id">Dukungan</span></h3>
+                <p>
+                    <span lang="en">Personalized insights, structured education, habit-building modules, monthly reports.</span>
+                    <span lang="id">Insight personal, edukasi terstruktur, modul pembentukan kebiasaan, laporan bulanan.</span>
                 </p>
             </div>
         </div>
 
-        <!-- Tiered Table -->
-        <h3 style="margin-bottom: 10px;">
-            <span lang="en">Tiered Pricing Structure (Combined Participants)</span>
-            <span lang="id">Struktur Harga Bertingkat (Gabungan Peserta)</span>
+        <h3 style="margin-top: 40px; margin-bottom: 20px;">
+            <span lang="en">Key Benefits</span>
+            <span lang="id">Manfaat Utama</span>
         </h3>
         <div class="table-layout">
             <table>
                 <thead>
                     <tr>
-                        <th><span lang="en">Tier (Total Active Participants)</span><span lang="id">Tier (Total Peserta Aktif)</span></th>
-                        <th><span lang="en">DMP (per month)</span><span lang="id">DMP (per bulan)</span></th>
-                        <th><span lang="en">DPP (per month)</span><span lang="id">DPP (per bulan)</span></th>
-                        <th><span lang="en">HbA1c Test</span><span lang="id">Tes HbA1c</span></th>
+                        <th style="background-color: #334155;"><span lang="en">MNC Life Assurance</span><span lang="id">MNC Life Assurance</span></th>
+                        <th style="background-color: #475569;"><span lang="en">Corporate Client</span><span lang="id">Perusahaan Klien</span></th>
+                        <th style="background-color: #64748b;"><span lang="en">Insured Member</span><span lang="id">Peserta</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span lang="en">Lower long-term diabetes claims.</span><span lang="id">Penurunan klaim diabetes jangka panjang.</span></td>
+                        <td><span lang="en">Higher productivity & fewer sick days.</span><span lang="id">Produktivitas meningkat.</span></td>
+                        <td><span lang="en">Better glycemic control.</span><span lang="id">Kontrol gula darah lebih baik.</span></td>
+                    </tr>
+                    <tr>
+                        <td><span lang="en">Reduced catastrophic events.</span><span lang="id">Risiko kejadian katastrofik berkurang.</span></td>
+                        <td><span lang="en">Lower burden of unmanaged diabetes.</span><span lang="id">Beban penyakit kronis turun.</span></td>
+                        <td><span lang="en">Daily guidance, less confusion.</span><span lang="id">Panduan harian, lebih tenang.</span></td>
+                    </tr>
+                    <tr>
+                        <td><span lang="en">Improved loss ratios.</span><span lang="id">Rasio kerugian & renewal stabil.</span></td>
+                        <td><span lang="en">Clear dashboards & reports.</span><span lang="id">Laporan & dashboard jelas.</span></td>
+                        <td><span lang="en">Reduced anxiety.</span><span lang="id">Gaya hidup lebih sehat.</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 6: DPP Details -->
+<div class="slide-container" id="slide6">
+    <h2 class="slide-title">
+        <span lang="en">IV. Digital Prevention Program (DPP)</span>
+        <span lang="id">IV. Program Pencegahan Digital (DPP)</span>
+    </h2>
+    <div class="content-area">
+        <div class="three-column">
+            <div class="tile green-accent">
+                <i class="fa-solid fa-scale-balanced" style="font-size: 32px; color: #10B981; margin-bottom: 15px;"></i>
+                <h3 style="color: #10B981;"><span lang="en">Monitoring & Tools</span><span lang="id">Monitoring & Alat</span></h3>
+                <p>
+                    <span lang="en">Daily weight & waist circumference tracking; Loop Kit (digital scale + tape measure).</span>
+                    <span lang="id">Tracking berat & lingkar pinggang harian; Loop Kit (timbangan digital + pita ukur).</span>
+                </p>
+            </div>
+            <div class="tile green-accent">
+                <i class="fa-solid fa-comments" style="font-size: 32px; color: #10B981; margin-bottom: 15px;"></i>
+                <h3 style="color: #10B981;"><span lang="en">Coaching</span><span lang="id">Coaching</span></h3>
+                <p>
+                    <span lang="en">Unlimited chat access + monthly consultations.</span>
+                    <span lang="id">Akses chat tanpa batas + konsultasi bulanan.</span>
+                </p>
+            </div>
+            <div class="tile green-accent">
+                <i class="fa-solid fa-apple-whole" style="font-size: 32px; color: #10B981; margin-bottom: 15px;"></i>
+                <h3 style="color: #10B981;"><span lang="en">Support</span><span lang="id">Dukungan</span></h3>
+                <p>
+                    <span lang="en">Nutrition, exercise, habit formation content, and heat map risk tracking.</span>
+                    <span lang="id">Konten nutrisi, aktivitas fisik, pembentukan kebiasaan, dan pelacakan risiko heat map.</span>
+                </p>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 40px; margin-bottom: 20px;">
+            <span lang="en">Key Benefits</span>
+            <span lang="id">Manfaat Utama</span>
+        </h3>
+        <div class="table-layout">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="background-color: #334155;"><span lang="en">MNC Life Assurance</span><span lang="id">MNC Life Assurance</span></th>
+                        <th style="background-color: #475569;"><span lang="en">Corporate Client</span><span lang="id">Perusahaan Klien</span></th>
+                        <th style="background-color: #64748b;"><span lang="en">Insured Member</span><span lang="id">Peserta</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span lang="en">Prevents onset of diabetes.</span><span lang="id">Mencegah munculnya diabetes.</span></td>
+                        <td><span lang="en">Healthier workforce overall.</span><span lang="id">Tenaga kerja lebih sehat.</span></td>
+                        <td><span lang="en">Sustainable weight loss.</span><span lang="id">Penurunan berat badan berkelanjutan.</span></td>
+                    </tr>
+                    <tr>
+                        <td><span lang="en">Reduces long-term claim severity.</span><span lang="id">Menurunkan biaya klaim jangka panjang.</span></td>
+                        <td><span lang="en">Fewer high-risk clusters.</span><span lang="id">Lebih sedikit klaster berisiko tinggi.</span></td>
+                        <td><span lang="en">Higher energy & improved habits.</span><span lang="id">Energi meningkat.</span></td>
+                    </tr>
+                    <tr>
+                        <td><span lang="en">Strengthens preventive offering.</span><span lang="id">Memperkuat portofolio preventif.</span></td>
+                        <td><span lang="en">Heat-map visibility.</span><span lang="id">Heat map yang jelas.</span></td>
+                        <td><span lang="en">Early identification of risk.</span><span lang="id">Deteksi dini risiko.</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 7: Pricing Structure -->
+<div class="slide-container" id="slide7">
+    <h2 class="slide-title">
+        <span lang="en">V. Commercial Terms & Pricing Structure</span>
+        <span lang="id">V. Struktur Harga & Ketentuan Komersial</span>
+    </h2>
+    <div class="content-area">
+        <div class="two-column" style="margin-bottom: 40px;">
+            <!-- DMP Cost -->
+            <div class="tile blue-accent">
+                <h3><span lang="en">DMP Cost Structure</span><span lang="id">Struktur Biaya DMP</span></h3>
+                <p style="font-size: 14px; margin-bottom: 5px;"><span lang="en">(< 500 Active Participants)</span><span lang="id">(< 500 Peserta Aktif)</span></p>
+                <p style="font-size: 36px; color: #3B82F6; font-weight: 700;">Rp 200,000 <span style="font-size: 18px; color: #64748b;">/ mo</span></p>
+                <div class="bullet-list" style="margin-top: 15px;">
+                    <ul>
+                        <li><span lang="en"><strong>HbA1c Testing:</strong> Rp 120,000/test.</span><span lang="id"><strong>Tes HbA1c:</strong> Rp 120.000/tes.</span></li>
+                        <li><span lang="en"><strong>Onsite:</strong> Free if ≥100 participants (else Rp 8jt).</span><span lang="id"><strong>Onsite:</strong> Gratis jika ≥100 peserta (jika kurang Rp 8jt).</span></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- DPP Cost -->
+            <div class="tile green-accent">
+                <h3><span lang="en">DPP Cost Structure</span><span lang="id">Struktur Biaya DPP</span></h3>
+                <p style="font-size: 14px; margin-bottom: 5px;"><span lang="en">(< 500 Active Participants)</span><span lang="id">(< 500 Peserta Aktif)</span></p>
+                <p style="font-size: 36px; color: #10B981; font-weight: 700;">Rp 150,000 <span style="font-size: 18px; color: #64748b;">/ mo</span></p>
+                <div class="bullet-list" style="margin-top: 15px;">
+                    <ul>
+                        <li><span lang="en"><strong>Onsite:</strong> Free if ≥100 participants (else Rp 8jt).</span><span lang="id"><strong>Onsite:</strong> Gratis jika ≥100 peserta (jika kurang Rp 8jt).</span></li>
+                        <li><span lang="en"><strong>Billed only for active members.</strong></span><span lang="id"><strong>Penagihan hanya untuk peserta aktif.</strong></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="margin-bottom: 15px;"><span lang="en">Tiered Pricing (Combined Active DMP + DPP)</span><span lang="id">Struktur Harga Bertingkat (Gabungan Peserta)</span></h3>
+        <div class="table-layout">
+            <table>
+                <thead>
+                    <tr>
+                        <th><span lang="en">Tier (Total Participants)</span><span lang="id">Tier (Total Peserta)</span></th>
+                        <th><span lang="en">DMP / month</span><span lang="id">DMP / bulan</span></th>
+                        <th><span lang="en">DPP / month</span><span lang="id">DPP / bulan</span></th>
+                        <th><span lang="en">HbA1c (DMP Only)</span><span lang="id">HbA1c (Khusus DMP)</span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -705,71 +564,53 @@ body.show-id [lang="en"] { display: none; }
                 </tbody>
             </table>
         </div>
-        <p style="font-size: 14px; margin-top: 15px; font-style: italic;">
-            <span lang="en">*Pricing reductions apply starting from the following Billing Cycle once a Tier threshold has been reached.</span>
-            <span lang="id">*Penyesuaian harga berlaku mulai Billing Cycle berikutnya setelah Tier terpenuhi.</span>
-            <br>
-            <span lang="en"><strong>Onsite Health Talk + Screening:</strong> Free if ≥100 participants/site, otherwise Rp 8,000,000.</span>
-            <span lang="id"><strong>Health Talk + Screening Onsite:</strong> Gratis jika ≥100 peserta/situs, jika kurang: Rp 8.000.000.</span>
+        <p style="font-size: 14px; margin-top: 10px; color: #64748b;">
+            <span lang="en">*Reductions apply from the next Billing Cycle (21st to 20th) after Tier threshold is reached.</span>
+            <span lang="id">*Penyesuaian harga berlaku mulai Billing Cycle berikutnya (tgl 21 ke 20) setelah Tier terpenuhi.</span>
         </p>
     </div>
 </div>
 
-<!-- Slide 11: Operations Switch-Out -->
-<div class="slide-container" id="slide11">
+<!-- Slide 8: Switch Out -->
+<div class="slide-container" id="slide8">
     <h2 class="slide-title">
-        <span lang="en">V. Operational: Switch-Out Mechanism</span>
-        <span lang="id">V. Operasional: Mekanisme Switch-Out</span>
+        <span lang="en">VI. Operational: Switch-Out Mechanism</span>
+        <span lang="id">VI. Operasional: Mekanisme Switch-Out</span>
     </h2>
     <div class="content-area">
         <div class="two-column" style="gap: 40px; align-items: center;">
-            <!-- Definition -->
             <div>
-                <h3 style="color: #d97706;">
-                    <span lang="en">Inactive Participant Policy</span>
-                    <span lang="id">Kebijakan Peserta Tidak Aktif</span>
-                </h3>
+                <h3 style="color: #d97706;"><span lang="en">Inactive Participant Policy</span><span lang="id">Kebijakan Peserta Tidak Aktif</span></h3>
                 <p style="margin-bottom: 20px;">
                     <span lang="en">To ensure flexibility and maintain a stable number of active seats, we apply a "Seat Model" where the insurer keeps the seat, but the participant occupying it can be replaced.</span>
                     <span lang="id">Untuk menjaga fleksibilitas dan kestabilan jumlah seat aktif, kami menerapkan "Model Seat" di mana asuransi memiliki kursi, namun peserta yang mengisinya dapat diganti.</span>
                 </p>
                 <div class="tile centered" style="background-color: #fff7ed; border-color: #d97706;">
                     <i class="fa-solid fa-user-slash" style="font-size: 40px; color: #d97706; margin-bottom: 15px;"></i>
-                    <h4 style="margin: 0; color: #9a3412; font-size: 18px;">
+                    <h4 style="margin: 0; color: #9a3412; font-size: 18px; margin-top: 10px;">
                         <span lang="en">"Inactive" Definition</span>
                         <span lang="id">Definisi "Tidak Aktif"</span>
                     </h4>
                     <p style="font-size: 16px; margin-top: 5px;">
-                        <span lang="en">30 consecutive days of zero logging/activity and no coaching interaction.</span>
-                        <span lang="id">30 hari berturut-turut tanpa logging/aktivitas dan tanpa interaksi coaching.</span>
+                        <span lang="en">30 consecutive days with zero logs and no coaching interaction.</span>
+                        <span lang="id">30 hari berturut-turut tanpa log (data) dan tanpa interaksi coaching.</span>
                     </p>
                 </div>
             </div>
-
-            <!-- Mechanics -->
-            <div class="tile" style="background-color: #F8FAFC; border-left: 4px solid #d97706;">
+            <div class="tile blue-accent">
                 <div class="bullet-list">
                     <ul>
                         <li>
                             <i class="fa-solid fa-rotate"></i>
-                            <strong><span lang="en">Frequency:</span><span lang="id">Frekuensi:</span></strong>
-                            <br>
-                            <span lang="en">MNC Life may request a Switch-Out <strong>once per annum per participant slot</strong>.</span>
-                            <span lang="id">MNC Life dapat melakukan Switch-Out <strong>1 kali per tahun per seat</strong>.</span>
+                            <strong><span lang="en">Eligibility:</span><span lang="id">Kelayakan:</span></strong>
+                            <br><span lang="en">1 replacement allowed per seat per year.</span>
+                            <span lang="id">1 kali penggantian diizinkan per seat per tahun.</span>
                         </li>
-                        <li style="margin-top: 25px;">
-                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        <li style="margin-top: 20px;">
+                            <i class="fa-solid fa-file-invoice"></i>
                             <strong><span lang="en">Billing Effect:</span><span lang="id">Efek Billing:</span></strong>
-                            <br>
-                            <span lang="en">Billing for the Inactive Participant stops starting from the <strong>next Billing Cycle (21st)</strong> after Switch-Out confirmation.</span>
-                            <span lang="id">Penagihan peserta tidak aktif berhenti mulai <strong>Billing Cycle berikutnya (tgl 21)</strong> setelah konfirmasi.</span>
-                        </li>
-                        <li style="margin-top: 25px;">
-                            <i class="fa-solid fa-user-plus"></i>
-                            <strong><span lang="en">Replacement:</span><span lang="id">Penggantian:</span></strong>
-                            <br>
-                            <span lang="en">Billing for the replacement begins only after successful Onboarding.</span>
-                            <span lang="id">Penagihan peserta pengganti dimulai hanya setelah Onboarding berhasil.</span>
+                            <br><span lang="en">Inactive billing stops from next cycle (21st). Replacement billing starts only after successful onboarding.</span>
+                            <span lang="id">Tagihan tidak aktif berhenti siklus berikutnya (tgl 21). Tagihan pengganti mulai setelah onboarding sukses.</span>
                         </li>
                     </ul>
                 </div>
@@ -778,93 +619,66 @@ body.show-id [lang="en"] { display: none; }
     </div>
 </div>
 
-<!-- Slide 12: Impact on Systems -->
-<div class="slide-container" id="slide12">
+<!-- Slide 9: Impact on Systems -->
+<div class="slide-container" id="slide9">
     <h2 class="slide-title">
-        <span lang="en">VI. Impact on MNC Life Systems</span>
-        <span lang="id">VI. Dampak Terhadap Sistem MNC Life</span>
+        <span lang="en">VII. Impact on MNC Life Systems</span>
+        <span lang="id">VII. Dampak Terhadap Sistem MNC Life</span>
     </h2>
     <div class="content-area">
-        <div class="two-column" style="gap: 30px;">
-            <!-- Point 1 -->
-            <div class="tile" style="background-color: #eff6ff; border-color: #3B82F6;">
-                <i class="fa-solid fa-file-contract" style="font-size: 32px; color: #3B82F6; margin-bottom: 15px;"></i>
-                <h3 style="color: #1e3a8a; font-size: 20px;">
-                    <span lang="en">Claims Process</span>
-                    <span lang="id">Proses Klaim</span>
-                </h3>
+        <div class="three-column">
+            <div class="tile blue-accent">
+                <i class="fa-solid fa-gears" style="font-size: 32px; color: #3B82F6; margin-bottom: 15px;"></i>
+                <h3 style="color: #1e3a8a;"><span lang="en">Workflows</span><span lang="id">Alur Kerja</span></h3>
                 <p>
-                    <span lang="en"><strong>No change needed</strong> to current claims processes. The program runs independently as a value-add service.</span>
-                    <span lang="id"><strong>Tidak ada perubahan</strong> pada proses klaim saat ini. Program berjalan secara independen sebagai layanan bernilai tambah.</span>
+                    <span lang="en">No change to claims workflows. Minimal operational load.</span>
+                    <span lang="id">Tidak ada perubahan pada alur klaim. Beban operasional minimal.</span>
                 </p>
             </div>
-
-            <!-- Point 2 -->
-            <div class="tile" style="background-color: #f0fdf4; border-color: #10B981;">
-                <i class="fa-solid fa-feather" style="font-size: 32px; color: #10B981; margin-bottom: 15px;"></i>
-                <h3 style="color: #065f46; font-size: 20px;">
-                    <span lang="en">Operational Burden</span>
-                    <span lang="id">Beban Operasional</span>
-                </h3>
+            <div class="tile blue-accent">
+                <i class="fa-solid fa-puzzle-piece" style="font-size: 32px; color: #3B82F6; margin-bottom: 15px;"></i>
+                <h3 style="color: #1e3a8a;"><span lang="en">Compatibility</span><span lang="id">Kompatibilitas</span></h3>
                 <p>
-                    <span lang="en"><strong>Low operational burden</strong> for the insurer. Loop Health manages onboarding, logistics, and coaching.</span>
-                    <span lang="id"><strong>Beban operasional sangat rendah</strong> untuk pihak asuransi. Loop Health mengelola onboarding, logistik, dan coaching.</span>
+                    <span lang="en">Fully compatible with existing benefit structures. Easy integration with HR teams.</span>
+                    <span lang="id">Kompatibel penuh dengan struktur manfaat yang ada. Integrasi mudah dengan tim HR.</span>
                 </p>
             </div>
-
-            <!-- Point 3 -->
-            <div class="tile" style="background-color: #fff7ed; border-color: #d97706;">
-                <i class="fa-solid fa-puzzle-piece" style="font-size: 32px; color: #d97706; margin-bottom: 15px;"></i>
-                <h3 style="color: #9a3412; font-size: 20px;">
-                    <span lang="en">Compatibility</span>
-                    <span lang="id">Kompatibilitas</span>
-                </h3>
+            <div class="tile blue-accent">
+                <i class="fa-solid fa-user-shield" style="font-size: 32px; color: #3B82F6; margin-bottom: 15px;"></i>
+                <h3 style="color: #1e3a8a;"><span lang="en">Data Privacy</span><span lang="id">Privasi Data</span></h3>
                 <p>
-                    <span lang="en"><strong>Compatible</strong> with all existing benefit structures; functions seamlessly as a preventive add-on.</span>
-                    <span lang="id"><strong>Kompatibel</strong> dengan seluruh struktur manfaat yang ada; berfungsi mulus sebagai add-on preventif.</span>
-                </p>
-            </div>
-
-            <!-- Point 4 -->
-            <div class="tile" style="background-color: #F8FAFC; border-color: #64748b;">
-                <i class="fa-solid fa-shield-halved" style="font-size: 32px; color: #64748b; margin-bottom: 15px;"></i>
-                <h3 style="color: #334155; font-size: 20px;">
-                    <span lang="en">Data Privacy</span>
-                    <span lang="id">Privasi Data</span>
-                </h3>
-                <p>
-                    <span lang="en"><strong>Data sharing is limited</strong> to aggregate outcomes (unless otherwise agreed), protecting member privacy.</span>
-                    <span lang="id"><strong>Data yang dibagikan terbatas</strong> pada outcome agregat (kecuali disepakati lain), melindungi privasi anggota.</span>
+                    <span lang="en">Only aggregate, de-identified data shared.</span>
+                    <span lang="id">Data yang dibagikan hanya agregat dan anonymized.</span>
                 </p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Slide 13: Next Steps -->
-<div class="slide-container" id="slide13">
+<!-- Slide 10: Next Steps -->
+<div class="slide-container" id="slide10">
     <h2 class="slide-title">
-        <span lang="en">VII. Next Steps</span>
-        <span lang="id">VII. Langkah Selanjutnya</span>
+        <span lang="en">VIII. Next Steps</span>
+        <span lang="id">VIII. Langkah Selanjutnya</span>
     </h2>
     <div class="content-area" style="justify-content: center; align-items: center; text-align: center;">
-        <p style="max-width: 800px; margin-bottom: 40px;">
-            <span lang="en">Loop Health is prepared to support pilot implementation, phased rollout, or full-scale deployment based on MNC Life’s needs. We are ready to provide:</span>
-            <span lang="id">Loop Health siap mendukung implementasi pilot, rollout bertahap, atau implementasi penuh sesuai kebutuhan MNC Life. Kami siap menyediakan:</span>
+        <p style="max-width: 800px; margin-bottom: 40px; font-size: 22px;">
+            <span lang="en">Loop Health is ready to support pilot rollout, phased expansion, or full-scale insurer integration.</span>
+            <span lang="id">Loop Health siap mendukung pilot project, implementasi bertahap, atau integrasi penuh asuransi.</span>
         </p>
         
         <div class="three-column" style="gap: 20px; margin-bottom: 50px;">
-            <div class="tile" style="text-align: center; display: flex; flex-direction: column; align-items: center; border-color: #D97706;">
-                <i class="fa-solid fa-file-contract" style="font-size: 40px; color: #d97706; margin-bottom: 15px;"></i>
-                <p style="font-weight: 700;"><span lang="en">Custom Pricing Models</span><span lang="id">Model Harga Kustom</span></p>
+            <div class="tile gold-accent" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                <i class="fa-solid fa-tags" style="font-size: 40px; color: #d97706; margin-bottom: 15px;"></i>
+                <p style="font-weight: 700;"><span lang="en">Customized Pricing</span><span lang="id">Harga Disesuaikan</span></p>
             </div>
-            <div class="tile" style="text-align: center; display: flex; flex-direction: column; align-items: center; border-color: #D97706;">
+            <div class="tile gold-accent" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
                 <i class="fa-solid fa-copyright" style="font-size: 40px; color: #d97706; margin-bottom: 15px;"></i>
-                <p style="font-weight: 700;"><span lang="en">Co-Branded Materials</span><span lang="id">Materi Program Co-Branded</span></p>
+                <p style="font-weight: 700;"><span lang="en">Co-Branded Materials</span><span lang="id">Materi Co-Branded</span></p>
             </div>
-            <div class="tile" style="text-align: center; display: flex; flex-direction: column; align-items: center; border-color: #D97706;">
-                <i class="fa-solid fa-chart-pie" style="font-size: 40px; color: #d97706; margin-bottom: 15px;"></i>
-                <p style="font-weight: 700;"><span lang="en">Expanded Data Insights</span><span lang="id">Insight Data Diperluas</span></p>
+            <div class="tile gold-accent" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                <i class="fa-solid fa-magnifying-glass-chart" style="font-size: 40px; color: #d97706; margin-bottom: 15px;"></i>
+                <p style="font-weight: 700;"><span lang="en">Enhanced Analytics</span><span lang="id">Analitik Lanjutan</span></p>
             </div>
         </div>
 
@@ -873,11 +687,10 @@ body.show-id [lang="en"] { display: none; }
                 <span lang="en">Ready to transform your portfolio?</span>
                 <span lang="id">Siap mentransformasi portofolio Anda?</span>
             </h3>
-            <p style="color: #e2e8f0;">
+            <p style="color: #e2e8f0; font-size: 18px;">
                 <span lang="en">Contact us to discuss the pilot launch timeline.</span>
                 <span lang="id">Hubungi kami untuk mendiskusikan linimasa peluncuran pilot.</span>
             </p>
-            <p style="color: white; font-weight: 700; margin-top: 15px;">www.loophealth.id</p>
         </div>
     </div>
 </div>
