@@ -9,14 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-/* 1. THE SETUP - PRESERVING ORIGINAL EQUIRA STYLES */
-
-* {
-  box-sizing: border-box;
-}
+/* 1. THE SETUP */
+* { box-sizing: border-box; }
 
 body {
-  background-color: #f0f4f8; /* Lighter, cleaner gray */
+  background-color: #f0f4f8;
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr;
@@ -24,6 +21,8 @@ body {
   min-height: 100vh;
   padding: 20px 0;
   place-items: center;
+  font-family: 'Lato', sans-serif; /* Default font */
+  color: #475569;
 }
 
 .slide-container {
@@ -60,8 +59,7 @@ body {
 /* LANGUAGE SWITCHER */
 .lang-switcher {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 20px; right: 20px;
     background-color: #fff;
     border: 1px solid #E2E8F0;
     border-radius: 6px;
@@ -88,61 +86,37 @@ body {
 }
 
 /* TYPOGRAPHY */
-.slide-container h1,
-.slide-container h2,
-.slide-container h3,
-.slide-container .slide-title {
+h1, h2, h3, .slide-title {
   color: #1E293B; 
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
   margin: 0;
 }
 
-.slide-container p,
-.slide-container li,
-.slide-container .subtitle,
-.slide-container td,
-.slide-container th {
+p, li, .subtitle, td, th {
   color: #475569; 
   font-family: 'Lato', sans-serif;
 }
 
-.slide-container h1 {
-  font-size: 70px;
-}
+h1 { font-size: 70px; }
 
-.slide-container .slide-title {
+.slide-title {
   font-size: 40px;
   font-weight: 700;
   margin-bottom: 40px;
   text-align: left;
   width: 100%;
-  border-bottom: 3px solid #fbbf24; /* Added Gold Accent for MNC feel */
+  border-bottom: 3px solid #fbbf24; /* Gold Accent */
   padding-bottom: 15px;
 }
 
-.slide-container h3 {
-  font-size: 24px;
-  font-weight: 700;
-  font-family: 'Poppins', sans-serif;
-  margin-bottom: 15px;
-}
+h3 { font-size: 24px; margin-bottom: 15px; }
 
-.slide-container p,
-.slide-container li,
-.slide-container td,
-.slide-container th {
-  font-size: 18px;
-  line-height: 1.5;
-}
+p, li, td, th { font-size: 18px; line-height: 1.5; }
 
-.slide-container .subtitle {
-  font-weight: 400;
-  margin: 20px auto;
-  font-size: 24px;
-}
+.subtitle { font-weight: 400; margin: 20px auto; font-size: 24px; }
 
-.slide-container .content-area {
+.content-area {
   align-items: center;
   display: flex;
   flex-grow: 1;
@@ -175,21 +149,6 @@ body {
   width: 100%;
 }
 
-.two-column.tiled, .three-column.tiled {
-  align-items: stretch;
-}
-
-.two-column.tiled>div, .three-column.tiled>div {
-  background-color: #F8FAFC;
-  border-radius: 12px;
-  border: 1px solid #E2E8F0;
-  padding: 40px;
-}
-
-.two-column.tiled h3, .three-column.tiled h3 {
-  color: #10B981;
-}
-
 .tile {
   align-items: flex-start;
   text-align: left;
@@ -201,23 +160,17 @@ body {
   flex: 1;
   justify-content: flex-start;
   padding: 30px;
+  height: 100%;
 }
 
 .tile.centered {
     align-items: center;
     text-align: center;
+    justify-content: center;
 }
 
-.bullet-list {
-  width: 100%;
-}
-
-.bullet-list ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
+.bullet-list { width: 100%; }
+.bullet-list ul { list-style: none; margin: 0; padding: 0; }
 .bullet-list li {
   font-size: 18px;
   line-height: 1.5;
@@ -226,7 +179,6 @@ body {
   padding-left: 40px;
   position: relative;
 }
-
 .bullet-list i {
   color: #10B981;
   font-size: 24px;
@@ -245,54 +197,52 @@ body {
 }
 
 /* Table Layout */
-.table-layout {
-  width: 100%;
-}
-
-.table-layout table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.table-layout th,
-.table-layout td {
+.table-layout { width: 100%; }
+.table-layout table { border-collapse: collapse; width: 100%; }
+.table-layout th, .table-layout td {
   border-bottom: 1px solid #E2E8F0;
   padding: 12px;
   text-align: left;
   vertical-align: top;
   font-size: 15px;
 }
-
 .table-layout th {
-  background-color: #1E293B; /* Darker header */
+  background-color: #1E293B;
   color: #ffffff;
   font-size: 14px;
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
 }
+.table-layout tr:last-child td { border-bottom: none; }
+.table-layout .fee { font-weight: 700; color: #10B981; }
 
-.table-layout tr:last-child td {
-  border-bottom: none;
+/* Benefit Cards */
+.benefit-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    height: 100%;
 }
-
-.table-layout .fee {
+.benefit-header {
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    color: #10B981;
+    color: #1e3a8a;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
 }
 
 /* BILINGUAL LOGIC */
-[lang="en"], [lang="id"] {
-    display: inline;
-}
+[lang="en"], [lang="id"] { display: inline; }
 .slide-title[lang], p[lang], h1[lang], h2[lang], h3[lang], li[lang], th[lang], td[lang], div[lang], span[lang].block {
     display: block;
 }
-body:not(.show-id) [lang="id"] {
-    display: none;
-}
-body.show-id [lang="en"] {
-    display: none;
-}
+body:not(.show-id) [lang="id"] { display: none; }
+body.show-id [lang="en"] { display: none; }
 
     </style>
 </head>
@@ -370,7 +320,7 @@ body.show-id [lang="en"] {
     </div>
 </div>
 
-<!-- Slide 3: Why Employee Health Matters (Kept from Original for Context) -->
+<!-- Slide 3: Why Employee Health Matters -->
 <div class="slide-container" id="slide3">
     <h2 class="slide-title">
         <span lang="en">The Challenge: Why This Matters</span>
@@ -409,7 +359,7 @@ body.show-id [lang="en"] {
     </div>
 </div>
 
-<!-- Slide 4: Program Overview (Updated with MNC Text) -->
+<!-- Slide 4: Program Overview -->
 <div class="slide-container" id="slide4">
     <h2 class="slide-title">
         <span lang="en">II. Program Overview</span>
@@ -451,7 +401,7 @@ body.show-id [lang="en"] {
     </div>
 </div>
 
-<!-- Slide 5: DMP Detail (Updated with MNC Text) -->
+<!-- Slide 5: DMP Detail -->
 <div class="slide-container" id="slide5">
     <h2 class="slide-title">
         <span lang="en">III. Diabetes Management Program (DMP)</span>
@@ -491,7 +441,7 @@ body.show-id [lang="en"] {
     </div>
 </div>
 
-<!-- Slide 5b: DMP Benefits (New Slide for MNC) -->
+<!-- Slide 5b: DMP Benefits -->
 <div class="slide-container" id="slide5b">
     <h2 class="slide-title">
         <span lang="en">DMP: Key Benefits</span>
@@ -499,41 +449,35 @@ body.show-id [lang="en"] {
     </h2>
     <div class="content-area">
         <div class="three-column">
-            <div class="tile" style="background-color: #fff7ed; border-color: #D97706;">
-                <h3 style="color: #D97706;"><span lang="en">For MNC Life Assurance</span><span lang="id">Untuk MNC Life Assurance</span></h3>
-                <div class="bullet-list">
-                    <ul>
-                        <li><i class="fa-solid fa-chart-line"></i><span lang="en">Lower long-term diabetes-related claims.</span><span lang="id">Penurunan klaim terkait diabetes jangka panjang.</span></li>
-                        <li><i class="fa-solid fa-shield-halved"></i><span lang="en">Reduced risk of catastrophic events.</span><span lang="id">Penurunan risiko kejadian katastrofik.</span></li>
-                        <li><i class="fa-solid fa-scale-balanced"></i><span lang="en">Improved loss ratios and renewal stability.</span><span lang="id">Rasio kerugian lebih stabil dan lebih sehat.</span></li>
-                    </ul>
-                </div>
+            <div class="benefit-card" style="border-top: 4px solid #D97706;">
+                <div class="benefit-header" style="color: #D97706;"><i class="fa-solid fa-building-shield"></i> <span lang="en">MNC Life Assurance</span><span lang="id">MNC Life Assurance</span></div>
+                <ul class="bullet-list">
+                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Lower long-term diabetes-related claims.</span><span lang="id">Penurunan klaim terkait diabetes jangka panjang.</span></li>
+                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Reduced risk of catastrophic events.</span><span lang="id">Penurunan risiko kejadian katastrofik.</span></li>
+                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Improved loss ratios and renewal stability.</span><span lang="id">Rasio kerugian lebih stabil dan lebih sehat.</span></li>
+                </ul>
             </div>
-            <div class="tile" style="background-color: #F8FAFC; border-color: #334155;">
-                <h3 style="color: #334155;"><span lang="en">For The Corporate Client</span><span lang="id">Untuk Perusahaan Klien</span></h3>
-                <div class="bullet-list">
-                    <ul>
-                        <li><i class="fa-solid fa-briefcase"></i><span lang="en">Improved employee productivity and attendance.</span><span lang="id">Produktivitas dan kehadiran karyawan meningkat.</span></li>
-                        <li><i class="fa-solid fa-users"></i><span lang="en">Lower burden of uncontrolled diabetes in the workforce.</span><span lang="id">Beban karyawan dengan diabetes tidak terkontrol berkurang.</span></li>
-                        <li><i class="fa-solid fa-file-invoice"></i><span lang="en">Clear health dashboards and outcome reporting.</span><span lang="id">Dashboard kesehatan dan laporan outcome yang jelas.</span></li>
-                    </ul>
-                </div>
+            <div class="benefit-card" style="border-top: 4px solid #334155;">
+                <div class="benefit-header" style="color: #334155;"><i class="fa-solid fa-briefcase"></i> <span lang="en">Corporate Client</span><span lang="id">Perusahaan Klien</span></div>
+                <ul class="bullet-list">
+                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Improved employee productivity and attendance.</span><span lang="id">Produktivitas dan kehadiran karyawan meningkat.</span></li>
+                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Lower burden of uncontrolled diabetes.</span><span lang="id">Beban karyawan dengan diabetes tidak terkontrol berkurang.</span></li>
+                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Clear health dashboards and outcome reporting.</span><span lang="id">Dashboard kesehatan dan laporan outcome yang jelas.</span></li>
+                </ul>
             </div>
-            <div class="tile" style="background-color: #f0f9ff; border-color: #3B82F6;">
-                <h3 style="color: #3B82F6;"><span lang="en">For The Member</span><span lang="id">Untuk Peserta</span></h3>
-                 <div class="bullet-list">
-                    <ul>
-                        <li><i class="fa-solid fa-heart-pulse"></i><span lang="en">Better glycemic control and fewer symptom fluctuations.</span><span lang="id">Kontrol gula darah lebih baik dan gejala lebih stabil.</span></li>
-                        <li><i class="fa-solid fa-mobile-screen"></i><span lang="en">Daily guidance, easy monitoring, and personalized coaching.</span><span lang="id">Panduan harian, monitoring mudah, dan coaching personal.</span></li>
-                        <li><i class="fa-solid fa-face-smile"></i><span lang="en">Reduced anxiety and better understanding of their condition.</span><span lang="id">Kecemasan berkurang, pemahaman kondisi lebih baik.</span></li>
-                    </ul>
-                </div>
+            <div class="benefit-card" style="border-top: 4px solid #3B82F6;">
+                <div class="benefit-header" style="color: #3B82F6;"><i class="fa-solid fa-user"></i> <span lang="en">The Member</span><span lang="id">Peserta</span></div>
+                 <ul class="bullet-list">
+                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Better glycemic control and fewer symptom fluctuations.</span><span lang="id">Kontrol gula darah lebih baik dan gejala lebih stabil.</span></li>
+                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Daily guidance, easy monitoring, and coaching.</span><span lang="id">Panduan harian, monitoring mudah, dan coaching personal.</span></li>
+                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Reduced anxiety and better understanding.</span><span lang="id">Kecemasan berkurang, pemahaman kondisi lebih baik.</span></li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Slide 6: DMP: Curriculum Details (Kept from Original) -->
+<!-- Slide 6: DMP Curriculum -->
 <div class="slide-container" id="slide6">
     <h2 class="slide-title">
         <span lang="en">DMP: Structured Education</span>
@@ -567,7 +511,7 @@ body.show-id [lang="en"] {
     </div>
 </div>
 
-<!-- Slide 7: DPP Detail (Updated with MNC Text) -->
+<!-- Slide 7: DPP Detail -->
 <div class="slide-container" id="slide7">
     <h2 class="slide-title">
         <span lang="en">IV. Digital Prevention Program (DPP)</span>
@@ -603,7 +547,7 @@ body.show-id [lang="en"] {
     </div>
 </div>
 
-<!-- Slide 7b: DPP Benefits (New Slide for MNC) -->
+<!-- Slide 7b: DPP Benefits -->
 <div class="slide-container" id="slide7b">
     <h2 class="slide-title">
         <span lang="en">DPP: Key Benefits</span>
@@ -611,52 +555,46 @@ body.show-id [lang="en"] {
     </h2>
     <div class="content-area">
         <div class="three-column">
-            <div class="tile" style="background-color: #fff7ed; border-color: #D97706;">
-                <h3 style="color: #D97706;"><span lang="en">For MNC Life Assurance</span><span lang="id">Untuk MNC Life Assurance</span></h3>
-                <div class="bullet-list">
-                    <ul>
-                        <li><i class="fa-solid fa-ban"></i><span lang="en">Prevents progression from prediabetes to diabetes.</span><span lang="id">Mencegah progresi dari pradiabetes ke diabetes.</span></li>
-                        <li><i class="fa-solid fa-file-medical"></i><span lang="en">Reduces long-term claims related to CVD, hypertension, and obesity.</span><span lang="id">Menurunkan klaim jangka panjang terkait CVD, hipertensi, dan obesitas.</span></li>
-                        <li><i class="fa-solid fa-handshake"></i><span lang="en">Strengthens MNC Life's value proposition with preventive care initiatives.</span><span lang="id">Memperkuat value proposition MNC Life melalui inisiatif preventif.</span></li>
-                    </ul>
-                </div>
+            <div class="benefit-card" style="border-top: 4px solid #D97706;">
+                <div class="benefit-header" style="color: #D97706;"><i class="fa-solid fa-building-shield"></i> <span lang="en">MNC Life Assurance</span><span lang="id">MNC Life Assurance</span></div>
+                <ul class="bullet-list">
+                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Prevents progression from prediabetes to diabetes.</span><span lang="id">Mencegah progresi dari pradiabetes ke diabetes.</span></li>
+                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Reduces long-term claims (CVD, obesity).</span><span lang="id">Menurunkan klaim jangka panjang (CVD, obesitas).</span></li>
+                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Strengthens preventive value proposition.</span><span lang="id">Memperkuat value proposition preventif.</span></li>
+                </ul>
             </div>
-            <div class="tile" style="background-color: #F8FAFC; border-color: #334155;">
-                <h3 style="color: #334155;"><span lang="en">For The Corporate Client</span><span lang="id">Untuk Perusahaan Klien</span></h3>
-                <div class="bullet-list">
-                    <ul>
-                        <li><i class="fa-solid fa-user-group"></i><span lang="en">Healthier workforce and reduced risk clustering.</span><span lang="id">Tenaga kerja lebih sehat dengan risiko yang lebih rendah.</span></li>
-                        <li><i class="fa-solid fa-chart-simple"></i><span lang="en">Better long-term productivity.</span><span lang="id">Produktivitas jangka panjang yang lebih baik.</span></li>
-                        <li><i class="fa-solid fa-map-location-dot"></i><span lang="en">Clear risk “heat maps” showing high-risk segments.</span><span lang="id">“Heat map” risiko untuk mengidentifikasi segmen berisiko tinggi.</span></li>
-                    </ul>
-                </div>
+            <div class="benefit-card" style="border-top: 4px solid #334155;">
+                <div class="benefit-header" style="color: #334155;"><i class="fa-solid fa-briefcase"></i> <span lang="en">Corporate Client</span><span lang="id">Perusahaan Klien</span></div>
+                <ul class="bullet-list">
+                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Healthier workforce and reduced risk clustering.</span><span lang="id">Tenaga kerja lebih sehat dengan risiko lebih rendah.</span></li>
+                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Better long-term productivity.</span><span lang="id">Produktivitas jangka panjang yang lebih baik.</span></li>
+                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Clear risk “heat maps”.</span><span lang="id">“Heat map” risiko yang jelas.</span></li>
+                </ul>
             </div>
-            <div class="tile" style="background-color: #f0fdf4; border-color: #10B981;">
-                <h3 style="color: #10B981;"><span lang="en">For The Member</span><span lang="id">Untuk Peserta</span></h3>
-                 <div class="bullet-list">
-                    <ul>
-                        <li><i class="fa-solid fa-shoe-prints"></i><span lang="en">Step-by-step guidance toward sustainable weight loss.</span><span lang="id">Panduan bertahap menuju penurunan berat badan yang berkelanjutan.</span></li>
-                        <li><i class="fa-solid fa-bolt"></i><span lang="en">More energy, improved lifestyle, and better metabolic awareness.</span><span lang="id">Lebih berenergi, gaya hidup lebih baik, kesadaran metabolik lebih tinggi.</span></li>
-                        <li><i class="fa-solid fa-magnifying-glass"></i><span lang="en">Early identification of metabolic risks.</span><span lang="id">Identifikasi dini risiko metabolik.</span></li>
-                    </ul>
-                </div>
+            <div class="benefit-card" style="border-top: 4px solid #10B981;">
+                <div class="benefit-header" style="color: #10B981;"><i class="fa-solid fa-user"></i> <span lang="en">The Member</span><span lang="id">Peserta</span></div>
+                 <ul class="bullet-list">
+                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Step-by-step sustainable weight loss.</span><span lang="id">Penurunan berat badan berkelanjutan bertahap.</span></li>
+                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">More energy and better metabolic awareness.</span><span lang="id">Lebih berenergi dan kesadaran metabolik lebih baik.</span></li>
+                    <li style="font-size: 16px; padding-left: 0; margin-bottom: 10px;"><span lang="en">Early identification of risks.</span><span lang="id">Identifikasi dini risiko.</span></li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Slide 8: The Loop App (Visual Context from Original) -->
+<!-- Slide 8: The Loop App -->
 <div class="slide-container" id="slide8">
     <h2 class="slide-title">
         <span lang="en">The Loop App: Daily Engagement</span>
         <span lang="id">Aplikasi Loop: Keterlibatan Harian</span>
     </h2>
     <div class="content-area" style="align-items: center; justify-content: center; gap: 15px;">
-        <img src="https://placehold.co/220x450/E2E8F0/1E293B?text=Logging" alt="App Logging Screen" style="border-radius: 12px; height: 500px;">
-        <img src="https://placehold.co/220x450/E2E8F0/1E293B?text=Trends" alt="App Trends Screen" style="border-radius: 12px; height: 500px;">
-        <img src="https://placehold.co/220x450/E2E8F0/1E293B?text=Chat" alt="App Chat Screen" style="border-radius: 12px; height: 500px;">
-        <img src="https://placehold.co/220x450/E2E8F0/1E293B?text=Curriculum" alt="App Curriculum Screen" style="border-radius: 12px; height: 500px;">
-        <img src="https://placehold.co/220x450/E2E8F0/1E293B?text=Reminders" alt="App Reminders Screen" style="border-radius: 12px; height: 500px;">
+        <img src="https://placehold.co/220x450/E2E8F0/1E293B?text=Logging" alt="App Logging Screen" style="border-radius: 12px; height: 400px;">
+        <img src="https://placehold.co/220x450/E2E8F0/1E293B?text=Trends" alt="App Trends Screen" style="border-radius: 12px; height: 400px;">
+        <img src="https://placehold.co/220x450/E2E8F0/1E293B?text=Chat" alt="App Chat Screen" style="border-radius: 12px; height: 400px;">
+        <img src="https://placehold.co/220x450/E2E8F0/1E293B?text=Curriculum" alt="App Curriculum Screen" style="border-radius: 12px; height: 400px;">
+        <img src="https://placehold.co/220x450/E2E8F0/1E293B?text=Reminders" alt="App Reminders Screen" style="border-radius: 12px; height: 400px;">
     </div>
     <div class="tiled-content" style="margin-top: 20px; gap: 10px; justify-content: space-around;">
         <p style="font-size: 16px; text-align: center;"><strong lang="en">Logging</strong><strong lang="id">Mencatat</strong></p>
@@ -667,7 +605,7 @@ body.show-id [lang="en"] {
     </div>
 </div>
 
-<!-- Slide 9: Evidence (Kept from Original) -->
+<!-- Slide 9: Evidence -->
 <div class="slide-container" id="slide9">
     <h2 class="slide-title">
         <span lang="en">Proven Impact (Pilot Data)</span>
@@ -703,7 +641,7 @@ body.show-id [lang="en"] {
     </div>
 </div>
 
-<!-- Slide 10: Pricing (MNC Specific) -->
+<!-- Slide 10: Pricing -->
 <div class="slide-container" id="slide10">
     <h2 class="slide-title">
         <span lang="en">V. Commercial Terms & Pricing Structure</span>
@@ -772,202 +710,4 @@ body.show-id [lang="en"] {
             <span lang="id">*Penyesuaian harga berlaku mulai Billing Cycle berikutnya setelah Tier terpenuhi.</span>
             <br>
             <span lang="en"><strong>Onsite Health Talk + Screening:</strong> Free if ≥100 participants/site, otherwise Rp 8,000,000.</span>
-            <span lang="id"><strong>Health Talk + Screening Onsite:</strong> Gratis jika ≥100 peserta/situs, jika kurang: Rp 8.000.000.</span>
-        </p>
-    </div>
-</div>
-
-<!-- Slide 11: Operations (New for MNC) -->
-<div class="slide-container" id="slide11">
-    <h2 class="slide-title">
-        <span lang="en">V. Operational: Switch-Out Mechanism</span>
-        <span lang="id">V. Operasional: Mekanisme Switch-Out</span>
-    </h2>
-    <div class="content-area">
-        <div class="two-column" style="gap: 40px; align-items: center;">
-            <!-- Definition -->
-            <div>
-                <h3 style="color: #d97706;">
-                    <span lang="en">Inactive Participant Policy</span>
-                    <span lang="id">Kebijakan Peserta Tidak Aktif</span>
-                </h3>
-                <p style="margin-bottom: 20px;">
-                    <span lang="en">To ensure flexibility and maintain a stable number of active seats, we apply a "Seat Model" where the insurer keeps the seat, but the participant occupying it can be replaced.</span>
-                    <span lang="id">Untuk menjaga fleksibilitas dan kestabilan jumlah seat aktif, kami menerapkan "Model Seat" di mana asuransi memiliki kursi, namun peserta yang mengisinya dapat diganti.</span>
-                </p>
-                <div class="tile centered" style="background-color: #fff7ed; border-color: #d97706;">
-                    <i class="fa-solid fa-user-slash" style="font-size: 40px; color: #d97706; margin-bottom: 15px;"></i>
-                    <h4 style="margin: 0; color: #9a3412; font-size: 18px;">
-                        <span lang="en">"Inactive" Definition</span>
-                        <span lang="id">Definisi "Tidak Aktif"</span>
-                    </h4>
-                    <p style="font-size: 16px; margin-top: 5px;">
-                        <span lang="en">30 consecutive days of zero logging/activity and no coaching interaction.</span>
-                        <span lang="id">30 hari berturut-turut tanpa logging/aktivitas dan tanpa interaksi coaching.</span>
-                    </p>
-                </div>
-            </div>
-
-            <!-- Mechanics -->
-            <div class="tile" style="background-color: #F8FAFC; border-left: 4px solid #d97706;">
-                <div class="bullet-list">
-                    <ul>
-                        <li>
-                            <i class="fa-solid fa-rotate"></i>
-                            <strong><span lang="en">Frequency:</span><span lang="id">Frekuensi:</span></strong>
-                            <br>
-                            <span lang="en">MNC Life may request a Switch-Out <strong>once per annum per participant slot</strong>.</span>
-                            <span lang="id">MNC Life dapat melakukan Switch-Out <strong>1 kali per tahun per seat</strong>.</span>
-                        </li>
-                        <li style="margin-top: 25px;">
-                            <i class="fa-solid fa-file-invoice-dollar"></i>
-                            <strong><span lang="en">Billing Effect:</span><span lang="id">Efek Billing:</span></strong>
-                            <br>
-                            <span lang="en">Billing for the Inactive Participant stops starting from the <strong>next Billing Cycle (21st)</strong> after Switch-Out confirmation.</span>
-                            <span lang="id">Penagihan peserta tidak aktif berhenti mulai <strong>Billing Cycle berikutnya (tgl 21)</strong> setelah konfirmasi.</span>
-                        </li>
-                        <li style="margin-top: 25px;">
-                            <i class="fa-solid fa-user-plus"></i>
-                            <strong><span lang="en">Replacement:</span><span lang="id">Penggantian:</span></strong>
-                            <br>
-                            <span lang="en">Billing for the replacement begins only after successful Onboarding.</span>
-                            <span lang="id">Penagihan peserta pengganti dimulai hanya setelah Onboarding berhasil.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 12: Impact on Systems (Split into Grid) -->
-<div class="slide-container" id="slide12">
-    <h2 class="slide-title">
-        <span lang="en">VI. Impact on MNC Life Systems</span>
-        <span lang="id">VI. Dampak Terhadap Sistem MNC Life</span>
-    </h2>
-    <div class="content-area">
-        <div class="two-column" style="gap: 30px;">
-            <!-- Point 1 -->
-            <div class="tile" style="background-color: #eff6ff; border-color: #3B82F6;">
-                <i class="fa-solid fa-file-contract" style="font-size: 32px; color: #3B82F6; margin-bottom: 15px;"></i>
-                <h3 style="color: #1e3a8a; font-size: 20px;">
-                    <span lang="en">Claims Process</span>
-                    <span lang="id">Proses Klaim</span>
-                </h3>
-                <p>
-                    <span lang="en"><strong>No change needed</strong> to current claims processes. The program runs independently as a value-add service.</span>
-                    <span lang="id"><strong>Tidak ada perubahan</strong> pada proses klaim saat ini. Program berjalan secara independen sebagai layanan bernilai tambah.</span>
-                </p>
-            </div>
-
-            <!-- Point 2 -->
-            <div class="tile" style="background-color: #f0fdf4; border-color: #10B981;">
-                <i class="fa-solid fa-feather" style="font-size: 32px; color: #10B981; margin-bottom: 15px;"></i>
-                <h3 style="color: #065f46; font-size: 20px;">
-                    <span lang="en">Operational Burden</span>
-                    <span lang="id">Beban Operasional</span>
-                </h3>
-                <p>
-                    <span lang="en"><strong>Low operational burden</strong> for the insurer. Loop Health manages onboarding, logistics, and coaching.</span>
-                    <span lang="id"><strong>Beban operasional sangat rendah</strong> untuk pihak asuransi. Loop Health mengelola onboarding, logistik, dan coaching.</span>
-                </p>
-            </div>
-
-            <!-- Point 3 -->
-            <div class="tile" style="background-color: #fff7ed; border-color: #d97706;">
-                <i class="fa-solid fa-puzzle-piece" style="font-size: 32px; color: #d97706; margin-bottom: 15px;"></i>
-                <h3 style="color: #9a3412; font-size: 20px;">
-                    <span lang="en">Compatibility</span>
-                    <span lang="id">Kompatibilitas</span>
-                </h3>
-                <p>
-                    <span lang="en"><strong>Compatible</strong> with all existing benefit structures; functions seamlessly as a preventive add-on.</span>
-                    <span lang="id"><strong>Kompatibel</strong> dengan seluruh struktur manfaat yang ada; berfungsi mulus sebagai add-on preventif.</span>
-                </p>
-            </div>
-
-            <!-- Point 4 -->
-            <div class="tile" style="background-color: #F8FAFC; border-color: #64748b;">
-                <i class="fa-solid fa-shield-halved" style="font-size: 32px; color: #64748b; margin-bottom: 15px;"></i>
-                <h3 style="color: #334155; font-size: 20px;">
-                    <span lang="en">Data Privacy</span>
-                    <span lang="id">Privasi Data</span>
-                </h3>
-                <p>
-                    <span lang="en"><strong>Data sharing is limited</strong> to aggregate outcomes (unless otherwise agreed), protecting member privacy.</span>
-                    <span lang="id"><strong>Data yang dibagikan terbatas</strong> pada outcome agregat (kecuali disepakati lain), melindungi privasi anggota.</span>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 13: Next Steps -->
-<div class="slide-container" id="slide13">
-    <h2 class="slide-title">
-        <span lang="en">VII. Next Steps</span>
-        <span lang="id">VII. Langkah Selanjutnya</span>
-    </h2>
-    <div class="content-area" style="justify-content: center; align-items: center; text-align: center;">
-        <p style="max-width: 800px; margin-bottom: 40px;">
-            <span lang="en">Loop Health is prepared to support pilot implementation, phased rollout, or full-scale deployment based on MNC Life’s needs. We are ready to provide:</span>
-            <span lang="id">Loop Health siap mendukung implementasi pilot, rollout bertahap, atau implementasi penuh sesuai kebutuhan MNC Life. Kami siap menyediakan:</span>
-        </p>
-        
-        <div class="three-column" style="gap: 20px; margin-bottom: 50px;">
-            <div class="tile" style="text-align: center; display: flex; flex-direction: column; align-items: center; border-color: #D97706;">
-                <i class="fa-solid fa-file-contract" style="font-size: 40px; color: #d97706; margin-bottom: 15px;"></i>
-                <p style="font-weight: 700;"><span lang="en">Custom Pricing Models</span><span lang="id">Model Harga Kustom</span></p>
-            </div>
-            <div class="tile" style="text-align: center; display: flex; flex-direction: column; align-items: center; border-color: #D97706;">
-                <i class="fa-solid fa-copyright" style="font-size: 40px; color: #d97706; margin-bottom: 15px;"></i>
-                <p style="font-weight: 700;"><span lang="en">Co-Branded Materials</span><span lang="id">Materi Program Co-Branded</span></p>
-            </div>
-            <div class="tile" style="text-align: center; display: flex; flex-direction: column; align-items: center; border-color: #D97706;">
-                <i class="fa-solid fa-chart-pie" style="font-size: 40px; color: #d97706; margin-bottom: 15px;"></i>
-                <p style="font-weight: 700;"><span lang="en">Expanded Data Insights</span><span lang="id">Insight Data Diperluas</span></p>
-            </div>
-        </div>
-
-        <div style="background-color: #1e3a8a; color: white; padding: 30px; border-radius: 8px; width: 100%;">
-            <h3 style="color: white; margin-bottom: 10px;">
-                <span lang="en">Ready to transform your portfolio?</span>
-                <span lang="id">Siap mentransformasi portofolio Anda?</span>
-            </h3>
-            <p style="color: #e2e8f0;">
-                <span lang="en">Contact us to discuss the pilot launch timeline.</span>
-                <span lang="id">Hubungi kami untuk mendiskusikan linimasa peluncuran pilot.</span>
-            </p>
-        </div>
-    </div>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const langEn = document.getElementById('lang-en');
-        const langId = document.getElementById('lang-id');
-        const body = document.body;
-
-        function setLanguage(lang) {
-            if (lang === 'id') {
-                body.classList.add('show-id');
-                langId.classList.add('active');
-                langEn.classList.remove('active');
-            } else {
-                body.classList.remove('show-id');
-                langEn.classList.add('active');
-                langId.classList.remove('active');
-            }
-        }
-
-        // Initial language
-        setLanguage('en');
-
-        langEn.addEventListener('click', () => setLanguage('en'));
-        langId.addEventListener('click', () => setLanguage('id'));
-    });
-</script>
-
-</body>
-</html>
+            <span lang="id"><strong>Health Talk +
